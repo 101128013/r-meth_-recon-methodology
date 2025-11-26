@@ -1,0 +1,5 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run validate || { echo "Validation failed. Aborting commit."; exit 1; }
+npm test --silent || { echo "Tests failed. Aborting commit."; exit 1; }
