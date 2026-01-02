@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 // Validate RECON_DATA using TypeScript AST parsing (safer than regex/eval)
-const fs = require('fs');
-const path = require('path');
-const ts = require('typescript');
+import fs from 'fs';
+import path from 'path';
+import ts from 'typescript';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const TS_FILE = path.resolve(__dirname, '../constants.ts');
 
